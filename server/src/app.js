@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
 require('dotenv').config();
 
 const authRoutes = require('./routes/auth');
@@ -34,4 +35,28 @@ app.use('*', (req, res) => {
 // Error handler (must be last)
 app.use(errorHandler);
 
+// Database connection helper
+const connectDB = async () => {
+  if (mongoose.connection.readyState === 1) return mongoose.connection;
+
+  const uri = process.env.MONGO_URI || process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/mern-testing';
+
+  try {
+    await mongoose.connect(uri, {
+      // Mongoose 7+ no longer needs these options but keep for safety
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log('Connected to MongoDB');
+    return mongoose.connection;
+  } catch (err) {
+    console.error('MongoDB connection error:', err);
+    throw err;
+  }
+};
+
+// Export app as the main export for backwards compatibility with tests that
+// require('../../src/app') and expect an Express app. Attach connectDB as
+// a property on the exported function/object so both usages work.
 module.exports = app;
+module.exports.connectDB = connectDB;

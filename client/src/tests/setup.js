@@ -1,5 +1,18 @@
 import '@testing-library/jest-dom';
 
+// Replace deprecated `react-dom/test-utils.act` with `react.act` to silence
+// the deprecation warning emitted by older versions of testing-library.
+try {
+  // Use require to avoid ESM/CJS interop issues in Jest setup
+  const react = require('react');
+  const reactDomTestUtils = require('react-dom/test-utils');
+  if (react && react.act && reactDomTestUtils && reactDomTestUtils.act !== react.act) {
+    reactDomTestUtils.act = react.act;
+  }
+} catch (e) {
+  // Best-effort patching; if it fails, tests will still run but may show the warning.
+}
+
 // Mock window.matchMedia
 Object.defineProperty(window, 'matchMedia', {
   writable: true,

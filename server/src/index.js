@@ -1,4 +1,8 @@
-const { app, connectDB } = require('./app');
+const appModule = require('./app');
+// Support both shapes: module.exports = app (with connectDB attached) or
+// module.exports = { app, connectDB }
+const app = appModule.app || appModule;
+const connectDB = appModule.connectDB || appModule.connectDB || (async () => {});
 
 const PORT = process.env.PORT || 5000;
 
