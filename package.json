@@ -1,0 +1,32 @@
+{
+  "name": "mern-testing",
+  "version": "1.0.0",
+  "description": "MERN stack application with comprehensive testing",
+  "scripts": {
+    "install-all": "npm install && cd client && npm install && cd ../server && npm install",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "test": "npm run test:server && npm run test:client",
+    "test:server": "cd server && npm test",
+    "test:client": "cd client && npm test",
+    "test:unit": "npm run test:unit:server && npm run test:unit:client",
+    "test:integration": "npm run test:integration:server && npm run test:integration:client",
+    "test:e2e": "npm run test:e2e:client",
+    "test:unit:server": "cd server && npm run test:unit",
+    "test:unit:client": "cd client && npm run test:unit",
+    "test:integration:server": "cd server && npm run test:integration",
+    "test:integration:client": "cd client && npm run test:integration",
+    "test:e2e:client": "cd client && npm run test:e2e",
+    "coverage": "npm run coverage:server && npm run coverage:client",
+    "coverage:server": "cd server && npm run coverage",
+    "coverage:client": "cd client && npm run coverage",
+    "setup-test-db": "cd server && npm run setup-test-db"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "keywords": ["mern", "testing", "jest", "react", "express", "mongodb"],
+  "author": "Your Name",
+  "license": "MIT"
+}
