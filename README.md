@@ -2,28 +2,6 @@
 
 > A comprehensive Bug Tracker application built with the MERN stack featuring full testing suite implementation and debugging capabilities.
 
-[![Node.js](https://img.shields.io/badge/Node.js-v18+-green.svg)](https://nodejs.org/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-4.4+-green.svg)](https://www.mongodb.com/)
-[![React](https://img.shields.io/badge/React-18+-blue.svg)](https://reactjs.org/)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-
-## 📖 Table of Contents
-
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Prerequisites](#-prerequisites)
-- [Installation](#-installation)
-- [Configuration](#-configuration)
-- [Running the Application](#-running-the-application)
-- [Testing](#-testing)
-- [Test Coverage](#-test-coverage)
-- [Debugging](#-debugging)
-- [Project Structure](#-project-structure)
-- [API Documentation](#-api-documentation)
-- [Common Issues](#-common-issues)
-- [Contributing](#-contributing)
-- [License](#-license)
-
 ## ✨ Features
 
 - **Bug Management**: Create, read, update, and delete bug reports with detailed tracking
@@ -445,39 +423,3 @@ npx jest --clearCache
 - React.memo() for expensive components
 - API response caching
 - Code splitting for faster load times
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-Please ensure:
-- All tests pass
-- Code follows the existing style
-- New features include tests
-- Documentation is updated
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👥 Authors
-
-- Your Name - [GitHub Profile](https://github.com/yourusername)
-
-## 🙏 Acknowledgments
-
-- MERN stack community
-- Jest and React Testing Library teams
-- All contributors who help improve this project
-
----
-
-**Made with ❤️ using the MERN Stack**
-
-For questions or support, please open an issue on GitHub.
