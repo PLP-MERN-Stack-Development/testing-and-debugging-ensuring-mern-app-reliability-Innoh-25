@@ -7,6 +7,7 @@ require('dotenv').config();
 
 const authRoutes = require('./routes/auth');
 const postRoutes = require('./routes/posts');
+const bugRoutes = require('./routes/bugs');
 const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
@@ -21,6 +22,9 @@ app.use(express.urlencoded({ extended: true }));
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/posts', postRoutes);
+// Bug routes (client expects /api/bugs). Mount the dedicated bug routes so
+// reports are saved and linked to their reporting user.
+app.use('/api/bugs', bugRoutes);
 
 // Health check route
 app.get('/api/health', (req, res) => {

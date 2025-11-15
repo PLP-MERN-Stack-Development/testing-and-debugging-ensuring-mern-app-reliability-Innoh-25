@@ -1,0 +1,11 @@
+.bug-list { padding: 1rem; background: #fff; border-radius: 6px }
+.bug-list-header { display:flex; justify-content:space-between; align-items:center }
+.bugs-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1rem }
+.bug-card { padding: 0.75rem; border: 1px solid #eee; border-radius: 6px; background: #fafafa }
+.bug-title { margin: 0 }
+.bug-meta { display:flex; gap:0.5rem }
+.status-badge, .priority-badge { padding: 0.2rem 0.4rem; border-radius: 4px; font-size: 0.8rem }
+.status-open { background: #e8f5e9 }
+.status-in-progress { background: #fff3e0 }
+.status-resolved { background: #e3f2fd }
+.status-closed { background: #ef9a9a }

@@ -1,12 +1,4 @@
-import React from 'react';
-
-const App = () => {
-  return (
-    <div style={{ padding: 20 }}>
-      <h1>MERN Testing Client</h1>
-      <p>The client dev server is running.</p>
-    </div>
-  );
-};
+// Re-export the JSX implementation so imports may use either './App' or './App.js'
+import App from './App.jsx';
 
 export default App;
